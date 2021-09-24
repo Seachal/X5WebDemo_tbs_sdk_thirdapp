@@ -1,0 +1,10 @@
+/.idea
+/gradle
+/app/build
+/X5CoreInterfaces/build
+/build
+/dest
+/bin
+*.iml
+maven/
+/.gradle
