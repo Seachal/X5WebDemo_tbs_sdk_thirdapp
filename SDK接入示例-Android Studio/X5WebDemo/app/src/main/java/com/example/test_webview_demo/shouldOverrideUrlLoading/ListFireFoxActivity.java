@@ -131,6 +131,7 @@ public class ListFireFoxActivity extends Activity {
                         case TBS_WEB_3: {
                             intent = new Intent(ListFireFoxActivity.this,
                                     BrowserActivity2False.class);
+                            intent.setData(Uri.parse(hyperlink));
                             ListFireFoxActivity.this.startActivity(intent);
 
                         }
@@ -138,6 +139,7 @@ public class ListFireFoxActivity extends Activity {
                         case TBS_WEB_4: {
                             intent = new Intent(ListFireFoxActivity.this,
                                     BrowserActivity3True.class);
+                            intent.setData(Uri.parse(hyperlink));
                             ListFireFoxActivity.this.startActivity(intent);
 
                         }
@@ -153,6 +155,7 @@ public class ListFireFoxActivity extends Activity {
                         case TBS_WEB_6: {
                             intent = new Intent(ListFireFoxActivity.this,
                                     BrowserActivity4.class);
+                            intent.setData(Uri.parse(hyperlink));
                             ListFireFoxActivity.this.startActivity(intent);
 
                         }

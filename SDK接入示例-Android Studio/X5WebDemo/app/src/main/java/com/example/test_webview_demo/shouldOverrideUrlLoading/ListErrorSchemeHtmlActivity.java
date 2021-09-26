@@ -130,6 +130,7 @@ public class ListErrorSchemeHtmlActivity extends Activity {
                         case TBS_WEB_3: {
                             intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity2False.class);
+                            intent.setData(Uri.parse(hyperlink));
                             ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }

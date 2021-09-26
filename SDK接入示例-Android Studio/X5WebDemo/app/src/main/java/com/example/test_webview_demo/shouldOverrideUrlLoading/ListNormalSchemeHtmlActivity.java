@@ -130,6 +130,7 @@ public class ListNormalSchemeHtmlActivity extends Activity {
                         case TBS_WEB_3: {
                             intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity2False.class);
+                            intent.setData(Uri.parse(hyperlink));
                             ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }

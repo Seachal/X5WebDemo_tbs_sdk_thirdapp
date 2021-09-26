@@ -11,9 +11,9 @@
         <item>浏览器demo</item>
         <item>全屏播放</item>
         <item>文件选择器</item>
-        <item>使用 本地 scheme网页</item>
         <item>使用网上有超链接网页</item>
-        <item>使用网上的有scheme网页</item>
+        <item>使用带有错误scheme，不能正常加载网页</item>
+        <item>使用删掉错误scheme，可正常加载网页</item>
     </string-array>
 
     <string-array name="index_titles_2">
