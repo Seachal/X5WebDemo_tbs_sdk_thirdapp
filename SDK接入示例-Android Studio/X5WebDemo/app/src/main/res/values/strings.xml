@@ -14,15 +14,16 @@
         <item>使用网上有超链接网页</item>
         <item>使用带有错误scheme，不能正常加载网页</item>
         <item>使用删掉错误scheme，可正常加载网页</item>
+        <item>重定向网页</item>
     </string-array>
 
     <string-array name="index_titles_2">
-        <item>不设置WebViewClient</item>
+        <item>不设置WebViewClient，x5不会提示选择浏览器</item>
         <item>设置WebViewClient,返回true</item>
         <item>设置WebViewClient,返回 false</item>
         <item>设置WebViewClient,loadUrl(),返回true</item>
         <item>设置WebViewClient,loadUrl(),返回false</item>
-        <item>不设置WebViewClient,使用系统webView</item>
+        <item>不设置WebViewClient,会提示选择浏览器</item>
         <item>用 intent 跳转到外部浏览器</item>
     </string-array>
 

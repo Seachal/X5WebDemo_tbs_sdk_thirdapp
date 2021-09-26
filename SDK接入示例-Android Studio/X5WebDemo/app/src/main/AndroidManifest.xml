@@ -108,6 +108,12 @@
             android:label="@string/app_name" >
         </activity>
 
+        <activity
+            android:name=".shouldOverrideUrlLoading.ListRefreshHtmlActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
 
         <activity
             android:name=".MainActivity"

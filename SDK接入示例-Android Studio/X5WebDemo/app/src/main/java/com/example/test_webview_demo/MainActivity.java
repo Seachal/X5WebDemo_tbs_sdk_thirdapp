@@ -18,6 +18,7 @@ import android.widget.SimpleAdapter;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListErrorSchemeHtmlActivity;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListFireFoxActivity;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListNormalSchemeHtmlActivity;
+import com.example.test_webview_demo.shouldOverrideUrlLoading.ListRefreshHtmlActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,8 +87,8 @@ public class MainActivity extends Activity {
             throw new IllegalArgumentException("the gridView is null");
 
         titles = getResources().getStringArray(R.array.index_titles);
-        int[] iconResourse = {R.drawable.tbsweb, R.drawable.fullscreen,
-                R.drawable.filechooser, R.drawable.should_override_url_loading,
+        int[] iconResourse = {R.drawable.tbsweb, R.drawable.fullscreen, R.drawable.filechooser,
+                R.drawable.should_override_url_loading,R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,R.drawable.should_override_url_loading
         };
 
@@ -151,6 +152,13 @@ public class MainActivity extends Activity {
                         case TBS_WEB_3: {
                             intent = new Intent(MainActivity.this,
                                     ListNormalSchemeHtmlActivity.class);
+                            MainActivity.this.startActivity(intent);
+
+                        }
+                        break;
+                        case TBS_WEB_4: {
+                            intent = new Intent(MainActivity.this,
+                                    ListRefreshHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }

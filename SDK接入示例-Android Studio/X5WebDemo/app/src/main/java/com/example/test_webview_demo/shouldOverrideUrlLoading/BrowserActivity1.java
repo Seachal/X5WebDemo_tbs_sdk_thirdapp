@@ -46,6 +46,8 @@ import java.net.URL;
  * 不设置  WebViewClient
  *
  * 没有任何响应
+ *
+ * 因为默认使用了自定义的 X5WebView，X5WebView 已经做了setWebViewClient，所以当在网页上加载超链接时，不会提示选择浏览器。
  */
 public class BrowserActivity1 extends Activity {
 	/**

@@ -9,3 +9,8 @@
 
 [(41条消息) shouldOverrideUrlLoading返回值的处理及webview重定向造成无法返回的解决_MR CUI的专栏-CSDN博客_shouldoverrideurlloading 返回值](https://blog.csdn.net/cui130/article/details/85569426#shouldOverrideUrlLoading_3)
 
+ * 如果未提供 WebViewClient，默认情况下 WebView 将要求活动管理器为 URL 选择合适的处理程序。
+
+ * 如果提供了 WebViewClient，
+    * 则返回true会导致当前 WebView 中止加载 URL，
+    * 而返回false会导致 WebView 像往常一样继续加载 URL。
