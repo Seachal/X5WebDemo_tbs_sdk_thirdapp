@@ -63,7 +63,7 @@ public class BrowserActivity1 extends Activity {
 	private Button mGo;
 	private EditText mUrl;
 
-	private static final String mHomeUrl = "https://home.firefoxchina.cn/";
+	private static final String mHomeUrl = "";
 	private static final String TAG = "SdkDemo";
 	private static final int MAX_LENGTH = 14;
 	private boolean mNeedTestPage = false;
@@ -176,57 +176,57 @@ public class BrowserActivity1 extends Activity {
 //			}
 //		});
 
-		mWebView.setWebChromeClient(new WebChromeClient() {
-
-			@Override
-			public boolean onJsConfirm(WebView arg0, String arg1, String arg2,
-					JsResult arg3) {
-				return super.onJsConfirm(arg0, arg1, arg2, arg3);
-			}
-
-			View myVideoView;
-			View myNormalView;
-			CustomViewCallback callback;
-
-			// /////////////////////////////////////////////////////////
-			//
-			/**
-			 * 全屏播放配置
-			 */
-			@Override
-			public void onShowCustomView(View view,
-					CustomViewCallback customViewCallback) {
-				FrameLayout normalView = (FrameLayout) findViewById(R.id.web_filechooser);
-				ViewGroup viewGroup = (ViewGroup) normalView.getParent();
-				viewGroup.removeView(normalView);
-				viewGroup.addView(view);
-				myVideoView = view;
-				myNormalView = normalView;
-				callback = customViewCallback;
-			}
-
-			@Override
-			public void onHideCustomView() {
-				if (callback != null) {
-					callback.onCustomViewHidden();
-					callback = null;
-				}
-				if (myVideoView != null) {
-					ViewGroup viewGroup = (ViewGroup) myVideoView.getParent();
-					viewGroup.removeView(myVideoView);
-					viewGroup.addView(myNormalView);
-				}
-			}
-
-			@Override
-			public boolean onJsAlert(WebView arg0, String arg1, String arg2,
-					JsResult arg3) {
-				/**
-				 * 这里写入你自定义的window alert
-				 */
-				return super.onJsAlert(null, arg1, arg2, arg3);
-			}
-		});
+//		mWebView.setWebChromeClient(new WebChromeClient() {
+//
+//			@Override
+//			public boolean onJsConfirm(WebView arg0, String arg1, String arg2,
+//					JsResult arg3) {
+//				return super.onJsConfirm(arg0, arg1, arg2, arg3);
+//			}
+//
+//			View myVideoView;
+//			View myNormalView;
+//			CustomViewCallback callback;
+//
+//			// /////////////////////////////////////////////////////////
+//			//
+//			/**
+//			 * 全屏播放配置
+//			 */
+//			@Override
+//			public void onShowCustomView(View view,
+//					CustomViewCallback customViewCallback) {
+//				FrameLayout normalView = (FrameLayout) findViewById(R.id.web_filechooser);
+//				ViewGroup viewGroup = (ViewGroup) normalView.getParent();
+//				viewGroup.removeView(normalView);
+//				viewGroup.addView(view);
+//				myVideoView = view;
+//				myNormalView = normalView;
+//				callback = customViewCallback;
+//			}
+//
+//			@Override
+//			public void onHideCustomView() {
+//				if (callback != null) {
+//					callback.onCustomViewHidden();
+//					callback = null;
+//				}
+//				if (myVideoView != null) {
+//					ViewGroup viewGroup = (ViewGroup) myVideoView.getParent();
+//					viewGroup.removeView(myVideoView);
+//					viewGroup.addView(myNormalView);
+//				}
+//			}
+//
+//			@Override
+//			public boolean onJsAlert(WebView arg0, String arg1, String arg2,
+//					JsResult arg3) {
+//				/**
+//				 * 这里写入你自定义的window alert
+//				 */
+//				return super.onJsAlert(null, arg1, arg2, arg3);
+//			}
+//		});
 
 		mWebView.setDownloadListener(new DownloadListener() {
 
@@ -275,28 +275,28 @@ public class BrowserActivity1 extends Activity {
 			}
 		});
 
-		WebSettings webSetting = mWebView.getSettings();
-		webSetting.setAllowFileAccess(true);
-		webSetting.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
-		webSetting.setSupportZoom(true);
-		webSetting.setBuiltInZoomControls(true);
-		webSetting.setUseWideViewPort(true);
-		webSetting.setSupportMultipleWindows(false);
-		// webSetting.setLoadWithOverviewMode(true);
-		webSetting.setAppCacheEnabled(true);
-		// webSetting.setDatabaseEnabled(true);
-		webSetting.setDomStorageEnabled(true);
-		webSetting.setJavaScriptEnabled(true);
-		webSetting.setGeolocationEnabled(true);
-		webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
-		webSetting.setAppCachePath(this.getDir("appcache", 0).getPath());
-		webSetting.setDatabasePath(this.getDir("databases", 0).getPath());
-		webSetting.setGeolocationDatabasePath(this.getDir("geolocation", 0)
-				.getPath());
-		// webSetting.setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);
-		webSetting.setPluginState(WebSettings.PluginState.ON_DEMAND);
-		// webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
-		// webSetting.setPreFectch(true);
+//		WebSettings webSetting = mWebView.getSettings();
+//		webSetting.setAllowFileAccess(true);
+//		webSetting.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
+//		webSetting.setSupportZoom(true);
+//		webSetting.setBuiltInZoomControls(true);
+//		webSetting.setUseWideViewPort(true);
+//		webSetting.setSupportMultipleWindows(false);
+//		// webSetting.setLoadWithOverviewMode(true);
+//		webSetting.setAppCacheEnabled(true);
+//		// webSetting.setDatabaseEnabled(true);
+//		webSetting.setDomStorageEnabled(true);
+//		webSetting.setJavaScriptEnabled(true);
+//		webSetting.setGeolocationEnabled(true);
+//		webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
+//		webSetting.setAppCachePath(this.getDir("appcache", 0).getPath());
+//		webSetting.setDatabasePath(this.getDir("databases", 0).getPath());
+//		webSetting.setGeolocationDatabasePath(this.getDir("geolocation", 0)
+//				.getPath());
+//		// webSetting.setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);
+//		webSetting.setPluginState(WebSettings.PluginState.ON_DEMAND);
+//		// webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
+//		// webSetting.setPreFectch(true);
 		long time = System.currentTimeMillis();
 		if (mIntentUrl == null) {
 			mWebView.loadUrl(mHomeUrl);

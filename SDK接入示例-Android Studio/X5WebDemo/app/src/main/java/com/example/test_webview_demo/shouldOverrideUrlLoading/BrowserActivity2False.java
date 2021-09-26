@@ -68,7 +68,7 @@ public class BrowserActivity2False extends Activity {
 	private EditText mUrl;
 
 
-	private static final String mHomeUrl = "https://home.firefoxchina.cn/";
+	private static final String mHomeUrl = "";
 //		private static final String mHomeUrl = https://home.firefoxchina.cn/
 
 	private static final String TAG = "SdkDemo";

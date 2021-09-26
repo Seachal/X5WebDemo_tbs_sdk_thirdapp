@@ -91,6 +91,23 @@
             android:label="@string/app_name" >
         </activity>
 
+        <activity
+            android:name=".shouldOverrideUrlLoading.ListLocalSchemeHtmlActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.ListFireFoxActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".shouldOverrideUrlLoading.ListIntnetSchemeHtmlActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
 
         <activity
             android:name=".MainActivity"

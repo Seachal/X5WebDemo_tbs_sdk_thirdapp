@@ -1,10 +1,11 @@
-package com.example.test_webview_demo;
+package com.example.test_webview_demo.shouldOverrideUrlLoading;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.view.KeyEvent;
@@ -15,14 +16,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
-import com.example.test_webview_demo.shouldOverrideUrlLoading.ListFireFoxActivity;
-import com.example.test_webview_demo.shouldOverrideUrlLoading.ListIntnetSchemeHtmlActivity;
-import com.example.test_webview_demo.shouldOverrideUrlLoading.ListLocalSchemeHtmlActivity;
+import com.example.test_webview_demo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends Activity {
+public class ListIntnetSchemeHtmlActivity extends Activity {
 
     public static boolean firstOpening = true;
     private static String[] titles = null;
@@ -32,18 +31,16 @@ public class MainActivity extends Activity {
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////
     // add constant here
-    private static final int TBS_WEB = 0;
-    private static final int FULL_SCREEN_VIDEO = 1;
-    private static final int FILE_CHOOSER = 2;
-    private static final int TBS_WEB_1 = 3;
-    private static final int TBS_WEB_2 = 4;
-    private static final int TBS_WEB_3 = 5;
-    private static final int TBS_WEB_4 = 6;
-    private static final int TBS_WEB_5 = 7;
-    private static final int TBS_WEB_6 = 8;
-    private static final int TBS_WEB_7 = 9;
 
-    private static final String mHomeUrl = "";
+    private static final int TBS_WEB_1 = 0;
+    private static final int TBS_WEB_2 = 1;
+    private static final int TBS_WEB_3 = 2;
+    private static final int TBS_WEB_4 = 3;
+    private static final int TBS_WEB_5 = 4;
+    private static final int TBS_WEB_6 = 5;
+    private static final int TBS_WEB_7 = 6;
+
+    private static final String hyperlink = "http://a.yuesao.ycyjwl.com/index.php/economic?offer_source=9&offer_keyword=1&newApp=true&cityId=69&";
 
     // /////////////////////////////////////////////////////////////////////////////////////////////
     // for view init
@@ -85,10 +82,11 @@ public class MainActivity extends Activity {
         if (gridView == null)
             throw new IllegalArgumentException("the gridView is null");
 
-        titles = getResources().getStringArray(R.array.index_titles);
-        int[] iconResourse = {R.drawable.tbsweb, R.drawable.fullscreen,
-                R.drawable.filechooser, R.drawable.should_override_url_loading,
-                R.drawable.should_override_url_loading,R.drawable.should_override_url_loading
+        titles = getResources().getStringArray(R.array.index_titles_2);
+        int[] iconResourse = { R.drawable.should_override_url_loading,
+                R.drawable.should_override_url_loading, R.drawable.should_override_url_loading,
+                R.drawable.should_override_url_loading, R.drawable.should_override_url_loading,
+                R.drawable.should_override_url_loading,   R.drawable.should_override_url_loading
         };
 
         HashMap<String, Object> item = null;
@@ -113,45 +111,60 @@ public class MainActivity extends Activity {
                                         int position, long id) {
                     Intent intent = null;
                     switch (position) {
-                        case FILE_CHOOSER: {
-                            intent = new Intent(MainActivity.this,
-                                    FilechooserActivity.class);
-                            MainActivity.this.startActivity(intent);
-
-                        }
-                        break;
-                        case FULL_SCREEN_VIDEO: {
-                            intent = new Intent(MainActivity.this,
-                                    FullScreenActivity.class);
-                            MainActivity.this.startActivity(intent);
-                        }
-                        break;
-
-                        case TBS_WEB: {
-                            intent = new Intent(MainActivity.this,
-                                    BrowserActivity.class);
-                            MainActivity.this.startActivity(intent);
-
-                        }
-                        break;
                         case TBS_WEB_1: {
-                            intent = new Intent(MainActivity.this,
-                                    ListLocalSchemeHtmlActivity.class);
-                            MainActivity.this.startActivity(intent);
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity1.class);
+                            intent.setData(Uri.parse(hyperlink));
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_2: {
-                            intent = new Intent(MainActivity.this,
-                                     ListFireFoxActivity.class);
-                            MainActivity.this.startActivity(intent);
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity2True.class);
+                            intent.setData(Uri.parse(hyperlink));
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_3: {
-                            intent = new Intent(MainActivity.this,
-                                    ListIntnetSchemeHtmlActivity.class);
-                            MainActivity.this.startActivity(intent);
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity2False.class);
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+
+                        }
+                        break;
+                        case TBS_WEB_4: {
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity3True.class);
+                            intent.setData(Uri.parse(hyperlink));
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+
+                        }
+                        break;
+                        case TBS_WEB_5: {
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity3False.class);
+                            intent.setData(Uri.parse(hyperlink));
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+
+                        }
+                        break;
+                        case TBS_WEB_6: {
+                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                                    BrowserActivity4.class);
+                            intent.setData(Uri.parse(hyperlink));
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+
+                        }
+                        break;
+//                        [Android调用系统自带浏览器打开网页的实现方法 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1726768)
+                        case TBS_WEB_7: {
+                            intent = new Intent();
+                            intent.setAction("android.intent.action.VIEW");
+                            Uri content_url = Uri.parse(hyperlink);
+                            intent.setData(content_url);
+                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;

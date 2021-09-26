@@ -67,7 +67,7 @@ public class BrowserActivity3False extends Activity {
 	private Button mGo;
 	private EditText mUrl;
 
-	private static final String mHomeUrl = "https://home.firefoxchina.cn/";
+	private static final String mHomeUrl = "";
 	private static final String TAG = "SdkDemo";
 	private static final int MAX_LENGTH = 14;
 	private boolean mNeedTestPage = false;
