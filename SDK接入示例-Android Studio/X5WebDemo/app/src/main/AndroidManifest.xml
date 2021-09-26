@@ -51,6 +51,48 @@
         </activity>
 
         <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity1"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity1"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity2True"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity2False"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity3True"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity3False"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".shouldOverrideUrlLoading.BrowserActivity4"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+
+        <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" >
             <intent-filter>

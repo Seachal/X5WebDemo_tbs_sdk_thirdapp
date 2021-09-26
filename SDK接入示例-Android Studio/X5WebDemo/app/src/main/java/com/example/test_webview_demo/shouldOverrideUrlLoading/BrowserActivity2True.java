@@ -1,4 +1,4 @@
-package com.example.test_webview_demo;
+package com.example.test_webview_demo.shouldOverrideUrlLoading;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -20,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.ValueCallback;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -27,12 +28,12 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.test_webview_demo.R;
 import com.example.test_webview_demo.utils.X5WebView;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient.CustomViewCallback;
 import com.tencent.smtt.export.external.interfaces.JsResult;
 import com.tencent.smtt.sdk.CookieSyncManager;
 import com.tencent.smtt.sdk.DownloadListener;
-import com.tencent.smtt.sdk.ValueCallback;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebSettings.LayoutAlgorithm;
@@ -43,12 +44,20 @@ import com.tencent.smtt.utils.TbsLog;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserActivity1 extends Activity {
+/**
+ * 设置  WebViewClient,返回 true
+ *
+ * 消费，拦截了，没有跳转
+ *
+ * 处理方式由自己来指定，如果不指定则不会跳转，不会响应.
+ */
+public class BrowserActivity2True extends Activity {
 	/**
 	 * 作为一个浏览器的示例展示出来，采用android+web的模式
 	 */
 	private X5WebView mWebView;
 	private android.webkit.WebView mWebViewAndroid;
+//	private  WebViewClient
 	private ViewGroup mViewParent;
 	private ImageButton mBack;
 	private ImageButton mForward;
@@ -58,7 +67,7 @@ public class BrowserActivity1 extends Activity {
 	private Button mGo;
 	private EditText mUrl;
 
-	private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
+	private static final String mHomeUrl = "https://home.firefoxchina.cn/";
 	private static final String TAG = "SdkDemo";
 	private static final int MAX_LENGTH = 14;
 	private boolean mNeedTestPage = false;
@@ -154,9 +163,7 @@ public class BrowserActivity1 extends Activity {
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
 				Log.i("BrowserActivity :","shouldOverrideUrlLoading s："+ url);
-//				return false;
-				view.loadUrl(url);
-				return false;
+				return true;
 			}
 
 			@Override
@@ -228,7 +235,7 @@ public class BrowserActivity1 extends Activity {
 			public void onDownloadStart(String arg0, String arg1, String arg2,
 					String arg3, long arg4) {
 				TbsLog.d(TAG, "url: " + arg0);
-				new AlertDialog.Builder(BrowserActivity1.this)
+				new AlertDialog.Builder(BrowserActivity2True.this)
 						.setTitle("allow to download？")
 						.setPositiveButton("yes",
 								new DialogInterface.OnClickListener() {
@@ -236,7 +243,7 @@ public class BrowserActivity1 extends Activity {
 									public void onClick(DialogInterface dialog,
 											int which) {
 										Toast.makeText(
-												BrowserActivity1.this,
+												BrowserActivity2True.this,
 												"fake message: i'll download...",
 												1000).show();
 									}
@@ -249,7 +256,7 @@ public class BrowserActivity1 extends Activity {
 											int which) {
 										// TODO Auto-generated method stub
 										Toast.makeText(
-												BrowserActivity1.this,
+												BrowserActivity2True.this,
 												"fake message: refuse download...",
 												Toast.LENGTH_SHORT).show();
 									}
@@ -261,7 +268,7 @@ public class BrowserActivity1 extends Activity {
 									public void onCancel(DialogInterface dialog) {
 										// TODO Auto-generated method stub
 										Toast.makeText(
-												BrowserActivity1.this,
+												BrowserActivity2True.this,
 												"fake message: refuse download...",
 												Toast.LENGTH_SHORT).show();
 									}
@@ -350,7 +357,7 @@ public class BrowserActivity1 extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(BrowserActivity1.this, "not completed",
+				Toast.makeText(BrowserActivity2True.this, "not completed",
 						Toast.LENGTH_LONG).show();
 			}
 		});

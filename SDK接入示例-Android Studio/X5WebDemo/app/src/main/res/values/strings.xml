@@ -10,6 +10,13 @@
         <item>浏览器demo</item>
         <item>全屏播放</item>
         <item>文件选择器</item>
+        <item>不设置WebViewClient</item>
+        <item>设置WebViewClient 返回 true</item>
+        <item>设置WebViewClient 返回 false</item>
+        <item>设置WebViewClient loadUrl 返回 true</item>
+        <item>设置WebViewClient loadUrl 返回 false</item>
+        <item>不设置WebViewClient 系统 webView</item>
+        <item>去外部浏览器</item>
     </string-array>
 
 </resources>

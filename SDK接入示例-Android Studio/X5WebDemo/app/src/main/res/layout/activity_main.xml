@@ -54,11 +54,10 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <FrameLayout
-            android:id="@+id/webView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </FrameLayout>
+       <FrameLayout
+           android:id="@+id/webView1"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"></FrameLayout>
         <TextView
             android:id="@+id/logView1"
             android:layout_width="match_parent"
