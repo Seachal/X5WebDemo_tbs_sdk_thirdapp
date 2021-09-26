@@ -21,7 +21,7 @@ import com.example.test_webview_demo.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListLocalSchemeHtmlActivity extends Activity {
+public class ListErrorSchemeHtmlActivity extends Activity {
 
     public static boolean firstOpening = true;
     private static String[] titles = null;
@@ -40,7 +40,7 @@ public class ListLocalSchemeHtmlActivity extends Activity {
     private static final int TBS_WEB_6 = 5;
     private static final int TBS_WEB_7 = 6;
 
-    private static final String hyperlink = "file:///android_asset/webpage/scheme.html";
+    private static final String hyperlink = "file:///android_asset/webpage/scheme_error.html";
 
     // /////////////////////////////////////////////////////////////////////////////////////////////
     // for view init
@@ -112,49 +112,49 @@ public class ListLocalSchemeHtmlActivity extends Activity {
                     Intent intent = null;
                     switch (position) {
                         case TBS_WEB_1: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity1.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_2: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity2True.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_3: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity2False.class);
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_4: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity3True.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_5: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity3False.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_6: {
-                            intent = new Intent(ListLocalSchemeHtmlActivity.this,
+                            intent = new Intent(ListErrorSchemeHtmlActivity.this,
                                     BrowserActivity4.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
@@ -164,7 +164,7 @@ public class ListLocalSchemeHtmlActivity extends Activity {
                             intent.setAction("android.intent.action.VIEW");
                             Uri content_url = Uri.parse(hyperlink);
                             intent.setData(content_url);
-                            ListLocalSchemeHtmlActivity.this.startActivity(intent);
+                            ListErrorSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;

@@ -92,7 +92,7 @@
         </activity>
 
         <activity
-            android:name=".shouldOverrideUrlLoading.ListLocalSchemeHtmlActivity"
+            android:name=".shouldOverrideUrlLoading.ListNormalSchemeHtmlActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name" >
         </activity>
@@ -103,7 +103,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".shouldOverrideUrlLoading.ListIntnetSchemeHtmlActivity"
+            android:name=".shouldOverrideUrlLoading.ListErrorSchemeHtmlActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name" >
         </activity>

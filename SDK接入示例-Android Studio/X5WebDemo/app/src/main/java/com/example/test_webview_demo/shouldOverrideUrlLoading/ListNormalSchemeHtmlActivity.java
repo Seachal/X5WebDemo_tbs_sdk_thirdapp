@@ -21,7 +21,7 @@ import com.example.test_webview_demo.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListIntnetSchemeHtmlActivity extends Activity {
+public class ListNormalSchemeHtmlActivity extends Activity {
 
     public static boolean firstOpening = true;
     private static String[] titles = null;
@@ -40,7 +40,7 @@ public class ListIntnetSchemeHtmlActivity extends Activity {
     private static final int TBS_WEB_6 = 5;
     private static final int TBS_WEB_7 = 6;
 
-    private static final String hyperlink = "http://a.yuesao.ycyjwl.com/index.php/economic?offer_source=9&offer_keyword=1&newApp=true&cityId=69&";
+    private static final String hyperlink = "file:///android_asset/webpage/scheme_normal.html";
 
     // /////////////////////////////////////////////////////////////////////////////////////////////
     // for view init
@@ -112,49 +112,49 @@ public class ListIntnetSchemeHtmlActivity extends Activity {
                     Intent intent = null;
                     switch (position) {
                         case TBS_WEB_1: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity1.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_2: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity2True.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_3: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity2False.class);
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_4: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity3True.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_5: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity3False.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
                         case TBS_WEB_6: {
-                            intent = new Intent(ListIntnetSchemeHtmlActivity.this,
+                            intent = new Intent(ListNormalSchemeHtmlActivity.this,
                                     BrowserActivity4.class);
                             intent.setData(Uri.parse(hyperlink));
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;
@@ -164,7 +164,7 @@ public class ListIntnetSchemeHtmlActivity extends Activity {
                             intent.setAction("android.intent.action.VIEW");
                             Uri content_url = Uri.parse(hyperlink);
                             intent.setData(content_url);
-                            ListIntnetSchemeHtmlActivity.this.startActivity(intent);
+                            ListNormalSchemeHtmlActivity.this.startActivity(intent);
 
                         }
                         break;

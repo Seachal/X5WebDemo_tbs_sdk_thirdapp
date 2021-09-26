@@ -16,8 +16,8 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListFireFoxActivity;
-import com.example.test_webview_demo.shouldOverrideUrlLoading.ListIntnetSchemeHtmlActivity;
-import com.example.test_webview_demo.shouldOverrideUrlLoading.ListLocalSchemeHtmlActivity;
+import com.example.test_webview_demo.shouldOverrideUrlLoading.ListErrorSchemeHtmlActivity;
+import com.example.test_webview_demo.shouldOverrideUrlLoading.ListNormalSchemeHtmlActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -136,7 +136,7 @@ public class MainActivity extends Activity {
                         break;
                         case TBS_WEB_1: {
                             intent = new Intent(MainActivity.this,
-                                    ListLocalSchemeHtmlActivity.class);
+                                    ListNormalSchemeHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
@@ -150,7 +150,7 @@ public class MainActivity extends Activity {
                         break;
                         case TBS_WEB_3: {
                             intent = new Intent(MainActivity.this,
-                                    ListIntnetSchemeHtmlActivity.class);
+                                    ListErrorSchemeHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
