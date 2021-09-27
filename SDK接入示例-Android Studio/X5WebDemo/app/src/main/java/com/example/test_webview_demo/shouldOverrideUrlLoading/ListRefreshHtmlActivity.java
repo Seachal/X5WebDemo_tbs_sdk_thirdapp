@@ -23,6 +23,8 @@ import java.util.HashMap;
 
 /**
  * 重定向跳转
+ *
+ * 加了了一个重定向网页
  */
 public class ListRefreshHtmlActivity extends Activity {
 
