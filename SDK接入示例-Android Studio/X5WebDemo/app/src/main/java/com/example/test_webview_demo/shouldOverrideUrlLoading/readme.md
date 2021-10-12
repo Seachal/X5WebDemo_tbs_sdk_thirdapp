@@ -10,6 +10,59 @@
     * 而返回false会导致 WebView 像往常一样继续加载 URL。
 -----
 
+
+
+
+# 二、shouldOverrideUrlLoading不同返回值的使用场景
+
+接上文，还是分三种情况：
+
+## 1.若没有设置 WebViewClient
+
+这种很清晰，字面理解就行了，就是在mWebView.setWebViewClient(new WebViewClient())这句代码不写的情况下加载url时会由系统来指定浏览器打开，如果手机安装了多个浏览器的话会弹出对话框让用户来选择使用哪个浏览器打开。总之也就是不会使用我们自己程序内的webview容器来加载了。
+
+## 2.若设置WebViewClient 且该方法返回 true
+
+设置 WebViewClient 且在其 shouldOverrideUrlLoading 方法返回 true,则系统不会继续处理,处理由开发者接管，例如：
+
+```
+			 @Override
+              public boolean shouldOverrideUrlLoading(WebView webView, String url) {
+                  return true;
+              }
+
+```
+
+如上，处理方式由自己来指定，如果不指定则不会跳转，不会响应.
+
+## 3.若设置WebViewClient 且该方法返回 false
+
+```
+			 @Override
+             public boolean shouldOverrideUrlLoading(WebView webView, String url) {
+                 return false;
+             }
+
+```
+
+这种情况下就会使用我们自己的webview来打开url.
+
+## 4.loadurl
+
+```
+			@Override
+            public boolean shouldOverrideUrlLoading(WebView webView, String url) {
+            	 webView.loadUrl(url);
+                 return false/true;
+             }
+
+```
+
+若设置WebViewClient且在方法中调用loadUrl的话则不会走retrun,所以返回true和false都是无效的，会重新加载url。
+------------------------------------------------------------------------
+
+## 下面是对此问题的解决
+
 用于测试的网页代码
 * [page_refresh.html](../../../../../assets/webpage/page_refresh.html)
 * [scheme_error.html](../../../../../assets/webpage/scheme_error.html)
