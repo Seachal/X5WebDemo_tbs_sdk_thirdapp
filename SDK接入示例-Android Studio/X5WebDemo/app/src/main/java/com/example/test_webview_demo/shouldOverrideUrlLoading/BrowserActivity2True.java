@@ -113,7 +113,7 @@ public class BrowserActivity2True extends Activity {
 		 * android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		 */
 		setContentView(R.layout.activity_main);
-		mViewParent = (ViewGroup) findViewById(R.id.webView1);
+		mViewParent = (ViewGroup) findViewById(R.id.webView_FrameLayout);
 
 		initBtnListenser();
 

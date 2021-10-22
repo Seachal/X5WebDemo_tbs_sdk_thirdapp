@@ -112,7 +112,7 @@ public class BrowserActivity1 extends Activity {
 		 */
 		setContentView(R.layout.activity_main);
 //		这是一个容器
-		mViewParent = (ViewGroup) findViewById(R.id.webView1);
+		mViewParent = (ViewGroup) findViewById(R.id.webView_FrameLayout);
 
 		initBtnListenser();
 
