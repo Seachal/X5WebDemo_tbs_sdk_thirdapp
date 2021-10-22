@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
@@ -52,14 +53,20 @@ public class BrowserActivity extends Activity {
 	 */
 	private X5WebView mWebView;
 	private ViewGroup mViewParent;
+//	返回
 	private ImageButton mBack;
+//	前进
 	private ImageButton mForward;
+//	退出
 	private ImageButton mExit;
+//	主页
 	private ImageButton mHome;
+	// 更多
 	private ImageButton mMore;
 	private Button mGo;
 	private EditText mUrl;
 
+//	主页链接
 	private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
 	private static final String TAG = "SdkDemo";
 	private static final int MAX_LENGTH = 14;
@@ -106,7 +113,8 @@ public class BrowserActivity extends Activity {
 		 * android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		 */
 		setContentView(R.layout.activity_main);
-		mViewParent = (ViewGroup) findViewById(R.id.webView1);
+//		 用代码的方式加载 WebView  而不是 Layout 文件。
+		mViewParent = (ViewGroup) findViewById(R.id.webView_FrameLayout);
 
 		initBtnListenser();
 
@@ -115,14 +123,17 @@ public class BrowserActivity extends Activity {
 	}
 
 	private void changGoForwardButton(WebView view) {
-		if (view.canGoBack())
+//		 修改透明度，其实就是置灰
+		if (view.canGoBack()) {
 			mBack.setAlpha(enable);
-		else
+		} else {
 			mBack.setAlpha(disable);
-		if (view.canGoForward())
+		}
+		if (view.canGoForward()) {
 			mForward.setAlpha(enable);
-		else
+		} else {
 			mForward.setAlpha(disable);
+		}
 		if (view.getUrl() != null && view.getUrl().equalsIgnoreCase(mHomeUrl)) {
 			mHome.setAlpha(disable);
 			mHome.setEnabled(false);
@@ -155,12 +166,19 @@ public class BrowserActivity extends Activity {
 		mWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				TbsLog.d(TAG, "shouldOverrideUrlLoading url: " + url);
 				return false;
+			}
+
+			@Override
+			public void onPageStarted(WebView webView, String s, Bitmap bitmap) {
+				super.onPageStarted(webView, s, bitmap);
 			}
 
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
+				TbsLog.d(TAG, "onPageFinished url: " + url);
 				// mTestHandler.sendEmptyMessage(MSG_OPEN_TEST_URL);
 				mTestHandler.sendEmptyMessageDelayed(MSG_OPEN_TEST_URL, 5000);// 5s?
 				if (Integer.parseInt(android.os.Build.VERSION.SDK) >= 16)
@@ -501,6 +519,7 @@ public class BrowserActivity extends Activity {
 	}
 
 	public static final int MSG_OPEN_TEST_URL = 0;
+//	初始化UI
 	public static final int MSG_INIT_UI = 1;
 	private final int mUrlStartNum = 0;
 	private int mCurrentUrl = mUrlStartNum;
