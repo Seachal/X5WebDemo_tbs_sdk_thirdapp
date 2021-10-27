@@ -47,11 +47,12 @@ isRedirect就是重定向的url,即重定向url也会触发shouldOverrideUrlLoad
 凡是webview.loadUrl出load页面的，isLoadUrl都是true(原因是webview.loadUrl最终会调到loadUrl(LoadUrlParams params)，进而params.setTransitionType(params.getTransitionType() | PageTransition.FROM_API))．
 
 
-sca亲测：首次用 loadurl 加载出一个网页时不会触发shouldOverrideUrlLoading的。
+sca亲测：
+  * 首次用 loadurl 加载出一个网页时不会触发shouldOverrideUrlLoading的。
 
-当在 webview 中点击网页链接，会触发 shouldOverrideUrlLoading.
+  * 当在 webview 中点击网页链接，会触发 shouldOverrideUrlLoading.
 
-当网页中有重定向Redirect 时会触发shouldOverrideUrlLoading。
+  * 当网页中有重定向Redirect 时会触发shouldOverrideUrlLoading。
 
 
 
