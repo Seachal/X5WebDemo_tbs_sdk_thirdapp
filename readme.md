@@ -11,7 +11,9 @@
 
 [Goolge官网shouldOverrideUrlLoading文档](https://github.com/Seachal/tbs_sdk_thirdapp_44085_update/blob/master/SDK%E6%8E%A5%E5%85%A5%E7%A4%BA%E4%BE%8B-Android%20Studio/X5WebDemo/Goolge%E5%AE%98%E7%BD%91shouldOverrideUrlLoading%E6%96%87%E6%A1%A3.md)
 
-## ## shouldOverrideUrlLoading
+# Goolge官网shouldOverrideUrlLoading文档
+
+## shouldOverrideUrlLoading
 
 在 [API 级别 24 中](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels) 添加[](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels)
 
@@ -38,7 +40,7 @@ public boolean shouldOverrideUrlLoading ([WebView](https://developer.android.com
 | --- |--- |
 | `boolean` | `true` 取消当前加载，否则返回 `false` 。|
 
-# shouldOverrideUrlLoading 官网文档详细
+## shouldOverrideUrlLoading
 
 在 [API 级别 1 中](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels) 添加
 已在 [API 级别 24 中](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels) 弃用[](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels)
@@ -73,6 +75,11 @@ public boolean shouldOverrideUrlLoading ([WebView](https://developer.android.com
 | 返回 ||
 | --- |--- |
 | `boolean` | `true` 取消当前加载，否则返回 `false` 。|
+
+
+# 
+
+
 
 
 
