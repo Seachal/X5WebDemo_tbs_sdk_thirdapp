@@ -16,7 +16,15 @@
 使用方法如下：
 
 ```java
-mWebView.setWebViewClient(new WebViewClient(){    @Override    public void onPageStarted(WebView view, String url, Bitmap favicon) {        super.onPageStarted(view, url, favicon);        Log.d(TAG,"onPageStarted");    }     @Override    public void onPageFinished(WebView view, String url) {        super.onPageFinished(view, url);        Log.d(TAG,"onPageFinished");    }});
+mWebView.setWebViewClient(new WebViewClient(){   
+    @Override   
+     public void onPageStarted(WebView view, String url, Bitmap favicon) {   
+        super.onPageStarted(view, url, favicon);  
+        Log.d(TAG,"onPageStarted");  
+    }     @Override    
+    public void onPageFinished(WebView view, String url) {    
+        super.onPageFinished(view, url);      
+        Log.d(TAG,"onPageFinished");    }});
 ```
 
 直接调用WebView.setWebViewClient方法即可设置WebViewClient回调，这里重写的两个函数，onPageStarted会在WebView开始加载网页时调用，onPageFinished会在加载结束时调用。这两个函数就可以完成我们开篇时的需求：在开始加载时显示进度条，在结束加载时隐藏进度条。
@@ -26,7 +34,12 @@ mWebView.setWebViewClient(new WebViewClient(){    @Override    public void onPag
 在WebViewClient中除了上面我们列举出的onPageStarted、onPageFinished还有很多其它函数，分别是：
 
 ```java
-/** * 在开始加载网页时会回调 */public void onPageStarted(WebView view, String url, Bitmap favicon) /** * 在结束加载网页时会回调 */public void onPageFinished(WebView view, String url)/** * 拦截 url 跳转,在里边添加点击链接跳转或者操作 */public boolean shouldOverrideUrlLoading(WebView view, String url)/** * 加载错误的时候会回调，在其中可做错误处理，比如再请求加载一次，或者提示404的错误页面 */public void onReceivedError(WebView view, int errorCode,String description, String failingUrl)/** * 当接收到https错误时，会回调此函数，在其中可以做错误处理 */public void onReceivedSslError(WebView view, SslErrorHandler handler,SslError error)/** * 在每一次请求资源时，都会通过这个函数来回调 */public WebResourceResponse shouldInterceptRequest(WebView view,        String url) {    return null;}
+/** * 在开始加载网页时会回调 */
+public void onPageStarted(WebView view, String url, Bitmap favicon)
+ /** * 在结束加载网页时会回调 */
+ public void onPageFinished(WebView view, String url)
+ /** * 拦截 url 跳转,在里边添加点击链接跳转或者操作 */
+ public boolean shouldOverrideUrlLoading(WebView view, String url)/** * 加载错误的时候会回调，在其中可做错误处理，比如再请求加载一次，或者提示404的错误页面 */public void onReceivedError(WebView view, int errorCode,String description, String failingUrl)/** * 当接收到https错误时，会回调此函数，在其中可以做错误处理 */public void onReceivedSslError(WebView view, SslErrorHandler handler,SslError error)/** * 在每一次请求资源时，都会通过这个函数来回调 */public WebResourceResponse shouldInterceptRequest(WebView view,        String url) {    return null;}
 ```
 
 上面的方法比较多，我们一个个来看

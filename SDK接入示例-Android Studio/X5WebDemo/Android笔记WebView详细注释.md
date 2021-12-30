@@ -184,12 +184,14 @@ public void onReceivedError(WebView view, int errorCode, String description, Str
 // 此方法添加于API23
 // 加载资源时出错，通常意味着连接不到服务器
 // 由于所有资源加载错误都会调用此方法，所以此方法应尽量逻辑简单
+//  onReceivedError 调用位置在 shouldOverrideUrlLoading后面
 @TargetApi(Build.VERSION_CODES.M)
 public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
     if (request.isForMainFrame()) {
         onReceivedError(view, error.getErrorCode(), error.getDescription().toString(), request.getUrl().toString());
     }
 }
+
 
 // 此方法添加于API23
 // 在加载资源(iframe,image,js,css,ajax...)时收到了 HTTP 错误(状态码>=400)
