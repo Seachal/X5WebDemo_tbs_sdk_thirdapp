@@ -111,6 +111,7 @@ public class MainActivity extends Activity {
         if (null != this.gridView) {
             this.gridView.setAdapter(gridAdapter);
             this.gridAdapter.notifyDataSetChanged();
+//            监听事件。
             this.gridView.setOnItemClickListener(new OnItemClickListener() {
 
                 @Override
@@ -118,6 +119,13 @@ public class MainActivity extends Activity {
                                         int position, long id) {
                     Intent intent = null;
                     switch (position) {
+                        case TBS_WEB: {
+                            intent = new Intent(MainActivity.this,
+                                    BrowserActivity.class);
+                            MainActivity.this.startActivity(intent);
+
+                        }
+                        break;
                         case FILE_CHOOSER: {
                             intent = new Intent(MainActivity.this,
                                     FilechooserActivity.class);
@@ -132,13 +140,8 @@ public class MainActivity extends Activity {
                         }
                         break;
 
-                        case TBS_WEB: {
-                            intent = new Intent(MainActivity.this,
-                                    BrowserActivity.class);
-                            MainActivity.this.startActivity(intent);
 
-                        }
-                        break;
+
                         case TBS_WEB_1: {
                             intent = new Intent(MainActivity.this,
                                     ListFireFoxActivity.class);

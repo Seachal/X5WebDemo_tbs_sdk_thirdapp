@@ -63,7 +63,9 @@ public class BrowserActivity extends Activity {
 	private EditText mUrl;
 
 //	主页链接
-	private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
+//	private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
+//    private static final String mHomeUrl = "https://mjz.xiaoxianai.cn/auth?appid=L8UL3u6qQBC0vnRx&mobile=13133155803&number=000000&school_appid=wPvSYIekgfp6mnY5&timestamp=1662706204&vip=1&sign=937DF3493DD61F361C5E76BAB50DD54C";
+	private static final String mHomeUrl = "https://mjz.xiaoxianai.cn/auth?appid=L8UL3u6qQBC0vnRx&mobile=13133155803&number=000000&school_appid=wPvSYIekgfp6mnY5&timestamp=1662706903&vip=1&sign=691FBABB942BB10EF1B2D2D32874E1F3";
 	private static final String TAG = "SdkDemo";
 	private static final int MAX_LENGTH = 14;
 	private boolean mNeedTestPage = false;
