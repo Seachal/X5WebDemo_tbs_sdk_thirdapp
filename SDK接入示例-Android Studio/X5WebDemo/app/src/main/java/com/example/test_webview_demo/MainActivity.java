@@ -15,6 +15,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
+import com.example.test_webview_demo.jscall.BrowserJsCallActivity;
+import com.example.test_webview_demo.jscall.BrowserJsCallLocalActivity;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListErrorSchemeHtmlActivity;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListFireFoxActivity;
 import com.example.test_webview_demo.shouldOverrideUrlLoading.ListNormalSchemeHtmlActivity;
@@ -36,13 +38,13 @@ public class MainActivity extends Activity {
     private static final int TBS_WEB = 0;
     private static final int FULL_SCREEN_VIDEO = 1;
     private static final int FILE_CHOOSER = 2;
-    private static final int TBS_WEB_1 = 3;
-    private static final int TBS_WEB_2 = 4;
-    private static final int TBS_WEB_3 = 5;
-    private static final int TBS_WEB_4 = 6;
-    private static final int TBS_WEB_5 = 7;
-    private static final int TBS_WEB_6 = 8;
-    private static final int TBS_WEB_7 = 9;
+    private static final int TBS_WEB_3 = 3;
+    private static final int TBS_WEB_4 = 4;
+    private static final int TBS_WEB_5 = 5;
+    private static final int TBS_WEB_6 = 6;
+    private static final int TBS_WEB_7 = 7;
+    private static final int TBS_WEB_8 = 8;
+    private static final int TBS_WEB_9 = 9;
 
     private static final String mHomeUrl = "";
 
@@ -90,6 +92,8 @@ public class MainActivity extends Activity {
         int[] iconResourse = {R.drawable.tbsweb,
                 R.drawable.fullscreen,
                 R.drawable.filechooser,
+                R.drawable.should_override_url_loading,
+                R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,
@@ -142,34 +146,46 @@ public class MainActivity extends Activity {
 
 
 
-                        case TBS_WEB_1: {
+                        case TBS_WEB_3: {
                             intent = new Intent(MainActivity.this,
                                     ListFireFoxActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
                         break;
-                        case TBS_WEB_2: {
+                        case TBS_WEB_4: {
                             intent = new Intent(MainActivity.this,
                                     ListErrorSchemeHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
                         break;
-                        case TBS_WEB_3: {
+                        case TBS_WEB_5: {
                             intent = new Intent(MainActivity.this,
                                     ListNormalSchemeHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
                         break;
-                        case TBS_WEB_4: {
+                        case TBS_WEB_6: {
                             intent = new Intent(MainActivity.this,
                                     ListRefreshHtmlActivity.class);
                             MainActivity.this.startActivity(intent);
 
                         }
                         break;
+                        case TBS_WEB_7: {
+                            intent = new Intent(MainActivity.this,
+                                    BrowserJsCallActivity.class);
+                            MainActivity.this.startActivity(intent);
+                        }
+                        break;
+                        case TBS_WEB_8: {
+                            intent = new Intent(MainActivity.this,
+                                    BrowserJsCallLocalActivity.class);
+                            MainActivity.this.startActivity(intent);
+                            break;
+                        }
                         default:
                             break;
                     }

@@ -55,11 +55,21 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name" >
         </activity>
+
+
+
         <activity
-            android:name=".shouldOverrideUrlLoading.BrowserActivity1"
+            android:name=".jscall.BrowserJsCallActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name" >
         </activity>
+
+        <activity
+            android:name=".jscall.BrowserJsCallLocalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
 
         <activity
             android:name=".shouldOverrideUrlLoading.BrowserActivity2True"

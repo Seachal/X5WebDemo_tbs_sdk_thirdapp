@@ -33,8 +33,8 @@ public abstract boolean isForMainFrame ()
 
 获取请求是否是为了获取主框架的文档。
 
-| 退货 |
-| --- |
+| 返回        |
+|-----------|
 | `boolean` | 是否对主框架文件提出请求。 例如， 对于子资源或 iframe 是`false` 。 |
 
 

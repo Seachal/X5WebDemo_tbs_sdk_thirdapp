@@ -104,7 +104,7 @@ webView.setWebViewClient(new WebViewClient(){
         });
 ```
 
-以上就从原理层吧问题集市清楚了。
+以上就从原理层把问题解释清楚了。
 
 
 但是为什么线上版本 webview 商城没有问题，而 st 环境webview 商城就有问题了？
