@@ -1,7 +1,7 @@
 # 记录一次webView 报错排查过程
 ## 现象
 早上测试告诉我，st 的商城 webview 中支付出问题了，效果如下。
-![image](img/image.png)
+![image](../img/image.png)
 
 ## 排查路径
 因为最近h5商城在改版， 所以怀疑是h5 改版造成的， 让测试找前端开发，
@@ -123,10 +123,10 @@ webView.setWebViewClient(new WebViewClient(){
 支付宝、或者微信， 但是BackHandledFragment 没有解析 scheme,所以就会有文档开头的问题。
 
 这是有问题的界面，MainActivity-BackHandledFragment
-![有问题的版本](img/image_1.png)
+![有问题的版本](../img/image_1.png)
 
 这是正常情况下的界面，AbsWebViewActivity
-![前端工程师修改跳转逻辑后的版本](img/image_2.png)
+![前端工程师修改跳转逻辑后的版本](../img/image_2.png)
 
 
 ## 总结
