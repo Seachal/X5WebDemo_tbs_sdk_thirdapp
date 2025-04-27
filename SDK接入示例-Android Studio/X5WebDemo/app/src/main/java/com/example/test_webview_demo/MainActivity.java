@@ -97,6 +97,7 @@ public class MainActivity extends Activity {
                 R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading,
+                R.drawable.should_override_url_loading,
                 R.drawable.should_override_url_loading
         };
 
@@ -181,6 +182,13 @@ public class MainActivity extends Activity {
                         }
                         break;
                         case TBS_WEB_8: {
+                            intent = new Intent(MainActivity.this,
+                                    BrowserJsCallLocalActivity.class);
+                            MainActivity.this.startActivity(intent);
+                            break;
+                        }
+                        //
+                        case 9: {
                             intent = new Intent(MainActivity.this,
                                     BrowserJsCallLocalActivity.class);
                             MainActivity.this.startActivity(intent);

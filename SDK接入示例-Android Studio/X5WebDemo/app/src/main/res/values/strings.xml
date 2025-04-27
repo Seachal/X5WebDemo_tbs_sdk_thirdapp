@@ -17,6 +17,7 @@
         <item>重定向网页</item>
         <item>Android 与 js 相互调用</item>
         <item>Android 与 js 相互调用本地 js代码</item>
+        <item>webview 高度自适应</item>
     </string-array>
 
     <string-array name="index_titles_2">
